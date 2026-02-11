@@ -1,6 +1,7 @@
 package com.example.dailynotes
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -14,20 +15,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val title = findViewById<TextView>(R.id.titleText)
-        val content= findViewById<TextView>(R.id.contentText)
-        val date= findViewById<TextView>(R.id.dateText)
+        val etNote = findViewById<TextView>(R.id.etNote)
+        val btnSave = findViewById<Button>(R.id.btnSave)
+        val tvNote = findViewById<TextView>(R.id.tvNote)
 
 
-        val note = Note(
-            title = "First Note",
-            content = "Learning Kotlin and Android",
-            date = "2024-06-01"
-        )
-
-        title.text = note.title
-        content.text= note.content
-        date.text= note.date
+        btnSave.setOnClickListener { view ->
+            val noteContent = etNote.text.toString()
+            tvNote.text = noteContent
+        }
     }
 
 }
