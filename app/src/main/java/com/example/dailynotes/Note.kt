@@ -1,3 +1,3 @@
 package com.example.dailynotes
 
-data class Note(val title: String, val content: String, val date: String)
+data class Note( val content: String)
